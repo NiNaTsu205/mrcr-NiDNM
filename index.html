@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メルカリ出品価格計算機</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="メルカリ計算機">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json"> 
+</head>
+<body>
+    <div class="container">
+        <h1>メルカリ出品価格計算機</h1>
+
+        <div class="mode-switch">
+            <button id="mode-to-selling" class="active">目標売上金から価格を計算</button>
+            <button id="mode-to-profit">出品価格から手取りを計算</button>
+        </div>
+
+        <div id="section-to-selling">
+            <div class="input-group">
+                <label for="target-profit">目標売上金（手取り額）：</label>
+                <input type="number" id="target-profit" min="0"> 円
+            </div>
+
+            
+        </div>
+
+        <div id="section-to-profit" style="display:none;">
+            <div class="input-group">
+                <label for="current-selling-price">出品価格（相場）：</label>
+                <input type="number" id="current-selling-price" value="1000" min="300"> 円
+            </div>
+
+            <p class="result-label">この価格で出品した場合の手取り額は...</p>
+            <p class="price-result" id="calculated-profit">---</p>
+            <p class="note">※販売手数料は切り捨てで計算しています。</p>
+        </div>
+
+        <hr>
+        
+        <div class="input-group">
+            <label for="shipping-fee-select">送料の選択：</label>
+            <select id="shipping-fee-select">
+                <option value="0">未定・その他 (手動入力)</option>
+                <option value="110">定形郵便 50g以内 (110円)</option>
+                <option value="140">定形外郵便 50g以内 (140円)</option>
+　　　　　　　　<option value="180" selected>ゆうパケットポストmini (180円)</option>
+                <option value="220">ゆうパケットポスト (220円)</option>
+                <option value="210">ネコポス (210円)</option>
+                <option value="450">宅急便コンパクト (450円)</option>
+                <option value="520">ゆうパケットプラス (455円+65円)</option>
+
+            </select>
+        </div>
+        
+        <div class="input-group" id="manual-shipping-input" style="display:none;">
+            <label for="manual-shipping-fee">その他の送料 (円)：</label>
+            <input type="number" id="manual-shipping-fee" value="0" min="0"> 円
+        </div>
+
+        <div class="input-group">
+            <label>販売手数料率：</label>
+            <span class="fixed-fee" id="fee-rate-display">10</span>%
+        </div>
+
+        <div class="breakdown">
+            <p>販売手数料 (<span id="fee-rate-display-breakdown">10</span>%) は <span id="calculated-fee">---</span> 円です</p>
+            <p>送料として <span id="display-shipping-fee">---</span> 円がかかります</p>
+            <p class="result-label">必要な出品価格は...</p>
+            <p class="price-result" id="selling-price">---</p>
+            <p class="note">※目標売上金を確実に達成するため、計算上の端数は切り上げています。</p>
+
+        </div>
+
+        <hr>
+        <h2>商品のメモと保存</h2>
+        <div class="input-group">
+             <label for="item-memo">商品名/メモ：</label>
+             <input type="text" id="item-memo" placeholder="例: Tシャツ (Sサイズ)">
+        </div>
+        <div class="save-buttons">
+            <button id="save-history-button" class="secondary-btn">計算結果を履歴として保存</button>
+            <button id="save-inventory-button">所持品（出品アイテム）として登録</button>
+        </div>
+
+        <hr>
+        <h2>所持品（出品アイテム）リスト</h2>
+        <div id="inventory-list">
+            <p>現在、所持品リストに登録された品物はありません。</p>
+        </div>
+
+        <hr>
+        <h2>計算履歴</h2>
+        <div id="history-list">
+            <p>まだ履歴はありません。</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
