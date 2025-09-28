@@ -1,0 +1,171 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px; /* 画面幅の制限 */
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #ff4081; /* メルカリっぽい色 */
+}
+
+/* モード切り替えボタン */
+.mode-switch {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.mode-switch button {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid #ff4081;
+    background-color: #fff;
+    color: #ff4081;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.mode-switch button.active {
+    background-color: #ff4081;
+    color: white;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"], select, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+button {
+    background-color: #ff4081;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #e63974;
+}
+
+.save-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.save-buttons button {
+    flex-grow: 1;
+}
+
+.secondary-btn {
+    background-color: #ccc;
+    color: #333;
+}
+
+hr {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.price-result {
+    font-size: 2.5em;
+    color: #2196f3;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.note {
+    font-size: 0.8em;
+    color: #777;
+}
+
+.fixed-fee {
+    font-weight: bold;
+    color: #ff4081;
+}
+
+/* 履歴アイテムのスタイル */
+.history-item {
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+    text-align: left;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    flex-wrap: wrap; /* スマホで折り返す */
+}
+
+.history-item > div {
+    flex-basis: 70%; /* 情報エリアを広めに */
+}
+
+.history-item .delete-btn {
+    flex-shrink: 0;
+    margin-left: 15px;
+    padding: 5px 10px;
+    background-color: #ccc;
+    color: #333;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.history-item p {
+    margin: 5px 0;
+}
+
+.history-item .final-result {
+    font-weight: bold;
+    color: #2196f3;
+    font-size: 1.1em;
+}
+
+/* 所持品リスト (出品アイテム) の目立たせ方 */
+.inventory-item {
+    border-left: 5px solid #2196f3; /* 左端に青いライン */
+    padding-left: 15px;
+    background-color: #f9f9ff;
+    flex-direction: column; /* 情報を縦に配置 */
+    align-items: flex-start;
+}
+
+.inventory-item p {
+    width: 100%;
+}
