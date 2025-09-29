@@ -24,6 +24,14 @@
                 <input type="number" id="target-profit" min="0"> 円
             </div>
 
+            <div class="breakdown">
+            <p>販売手数料 (<span id="fee-rate-display-breakdown">10</span>%) は <span id="calculated-fee">---</span> 円です</p>
+            <p>送料として <span id="display-shipping-fee">---</span> 円がかかります</p>
+            <p class="result-label">必要な出品価格は...</p>
+            <p class="price-result" id="selling-price">---</p>
+            <p class="note">※目標売上金を確実に達成するため、計算上の端数は切り上げています。</p>
+
+        </div>
             
         </div>
 
@@ -65,14 +73,7 @@
             <span class="fixed-fee" id="fee-rate-display">10</span>%
         </div>
 
-        <div class="breakdown">
-            <p>販売手数料 (<span id="fee-rate-display-breakdown">10</span>%) は <span id="calculated-fee">---</span> 円です</p>
-            <p>送料として <span id="display-shipping-fee">---</span> 円がかかります</p>
-            <p class="result-label">必要な出品価格は...</p>
-            <p class="price-result" id="selling-price">---</p>
-            <p class="note">※目標売上金を確実に達成するため、計算上の端数は切り上げています。</p>
-
-        </div>
+       
 
         <hr>
         <h2>商品のメモと保存</h2>
